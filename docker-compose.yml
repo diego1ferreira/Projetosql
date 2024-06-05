@@ -1,0 +1,13 @@
+ version: '3.9'
+ services:
+  postgres:
+   image: postgres:latest
+   container_name: postgres_container
+   environment: 
+    POSTGRES_DATABASE: db 
+    POSTGRES_USER: postgres
+    POSTGRES_PASSWORD: silvaaa
+   ports:
+    - "5432:5432" 
+   volumes:
+    - ./init.sql:/docker-entrypoint-initdb.d/init.sql
